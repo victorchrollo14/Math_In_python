@@ -23,7 +23,7 @@ init_printing(use_unicode=True)
 expr = input("enter the expression in x and y terms:")
 opt = input("enter the operation:definate integration,indefinate integration,differentiation,etc:\n")
 
-if(re.search('^indefinate',opt)):
+if(re.search('^indefinate',opt,re.IGNORECASE)):
     wrt_var = input("enter the with respect to variable:(eg x or y or z)\n")
     wrt_var = symbols('x') if(wrt_var == 'x') else  symbols('y')
     obj1 = Calculus(expr,wrt_var)
