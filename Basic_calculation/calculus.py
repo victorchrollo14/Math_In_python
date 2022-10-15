@@ -27,6 +27,8 @@ class Calculus:
     def triple_integration(self, *args):
         ans = integrate(self.expr, (self.wrt_var, args[0], args[1]), (args[2], args[3], args[4]), (args[5], args[6], args[7]))
         pprint(ans)
+    
+
         
 
 
@@ -45,10 +47,12 @@ def lower_upper_limit():
 x, y, z, a, b = smp.symbols('x y z a b')
 init_printing(use_unicode = True)
 
-operation_name = {'1 : indefinate integration','2 : definate intergration','3 : differentiation','4 : double integration', '5 : triple integration'}
+operation_name = {'1 : indefinate integration','2 : definate intergration','3 : differentiation','4 : double integration', '5 : triple integration','6 : gamma value'}
 option = input(f"enter the operation number:{operation_name}\n")
-expr = input("enter the expression in x and y terms:")
-pprint(simplify(expr))
+
+if (option != '6'):
+    expr = input("enter the expression/question: ")
+    pprint(simplify(expr))
 
 if (option == '1'):
     wrt_var = with_respect_to()
@@ -88,4 +92,11 @@ if(option == '5'):
 
     obj5 = Calculus(expr,wrt_var)
     obj5.triple_integration(lower_limit, upper_limit, wrt_var1, lower_lim1, upper_lim1, wrt_var2, lower_lim2, upper_lim2)
+
+if (option == '6'):
+    m = int(input('enter the m value: '))
+    n = int(input("enter n value: "))
+    beta_val = gamma(m)*gamma(n)/gamma(m+n)
+    print(f"Beta(m,n): {beta_val}")        
+    
 

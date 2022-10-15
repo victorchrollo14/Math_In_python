@@ -9,5 +9,5 @@ if (option == '1'):
      from Basic_calculation import calculus
 
 if (option == '2'):
-     from Basic_calculation import num_methods
+     from Basic_calculation import numerical_methods
 
