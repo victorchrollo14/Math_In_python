@@ -64,11 +64,11 @@ operation_name = {
 
 }
 
+for opt in operation_name:
+    print(opt, operation_name[opt])
 
-option = int(input(f"enter the operation number:{operation_name}\n"))
-
-
-expr = input("enter the expression/question: ")
+option = int(input(f"\nenter the operation number:"))
+expr = input("\nenter the expression/question: ")
 pprint(simplify(expr))
 
 if (option == 1):
@@ -119,11 +119,11 @@ if (option == 5):
 #     print(f"Beta(m,n): {beta_val}")
 
 if (option == 7):
-    """  To calculate limit:
+    """  
+       To calculate limit:
          smp.limit(expr, wrt_var, tends_to, dir = '+')  
          for lim   (expr)
              x -> 0+
-
     """
     tends_to = input('enter the tends to variable: ')
     tends_to_val = input('enter the tends to value: ')
